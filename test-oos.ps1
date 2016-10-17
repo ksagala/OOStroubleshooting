@@ -2,9 +2,9 @@
 # script to test basic functionality of Office Online Server
 #
 
-Write-host “” 
-[string]$base = Read-host “Hostname of Office Online Server (e.g. mail.company.com)” 
-write-host “” 
+Write-host â€œâ€ 
+[string]$base = Read-host â€œHostname of Office Online Server (e.g. mail.company.com)â€ 
+write-host â€œâ€ 
 
 $hcheck = "https://"+$base+"/m/met/participant.svc/jsonAnonymous/BroadcastPing"
 
@@ -16,10 +16,10 @@ if ($test1.StatusCode -eq 200)
 
 $hcheck2 = "https://"+$base+"/hosting/discovery/"
 
-$test2 = invoke-webrequest $hcheck
+$test2 = invoke-webrequest $hcheck2
 if ($test2.StatusCode -eq 200)
 {
-	write-host "Health check shows status OK" 
+	write-host "OOS discovery shows status OK" 
 }
 
 
